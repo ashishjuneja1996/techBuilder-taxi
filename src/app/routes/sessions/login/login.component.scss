@@ -1,0 +1,35 @@
+.for-cross-block {
+    position: relative;
+
+    .eye-icon {
+        position: absolute;
+        right: -4px;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        z-index: 99999;
+        max-width: 24px;
+        align-items: center;
+        mat-icon
+        {
+         width: 100%;
+         max-width: 24px;
+        }
+    }
+    .login-submit-button
+    {
+        background-color: var(--body-venus-blue) !important;
+        color: var(--body-venus-white) !important;
+    }
+}
+.logo-section
+{
+  width: 100%;
+  max-width: 100px;
+  margin: auto;
+  margin-top: 10px;
+  img{
+    width: 100%;
+  }
+}

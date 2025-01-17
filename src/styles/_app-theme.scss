@@ -1,0 +1,60 @@
+@use 'sass:color';
+@use 'sass:map';
+@use '@angular/material' as mat;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html {
+  // --body-font-family: 'Roboto', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial,
+  //   'Lucida Grande', sans-serif;
+  --body-font-family: 'Poppins';
+  --code-font-family: 'Poppins';
+  --gutter: 1rem;
+  --sidenav-width: 15rem;
+  --sidenav-collapsed-width: 4rem;
+}
+
+// Tokens for the app that are based on the current theme.
+@mixin theme($theme) {
+  @debug $theme;
+
+  $bg-color: mat.get-theme-color($theme,
+    if(mat.get-theme-type($theme) == dark, surface-container-high, surface-container-high));
+    --body-venus-blue: #{if(mat.get-theme-type($theme) == dark, '#b91c1c', '#0057E0')};
+    --body-venus-red: #{if(mat.get-theme-type($theme) == dark, '#b91c1c', '#FF0000')};
+  --body-venus-background-light-blue:#F2F6FD;
+  --body-venus-background-light-grey:#aaaaaa;
+  --mat-sidenav-content-text-color:#000;
+  --body-venus-white: #ffffff;
+  --venus-button-red: #b91c1c;
+  --venus-button-black: #000;
+  --body-venus-blue2:#0057E0;
+  --venus-black: #000000;
+  --body-venus-box-shadow:rgba(0, 0, 0, 0.2);
+  --body-background-color: #{$bg-color};
+  --margin-form-bottom:10px;
+  --link-color: #{mat.get-theme-color($theme, primary)};
+  --link-hover-color: #{color.adjust(mat.get-theme-color($theme, primary), $lightness: 100%)};
+  --code-border-color: #{rgba(mat.get-theme-color($theme, on-secondary-container), .1)};
+  --code-background-color: #{rgba(mat.get-theme-color($theme, on-secondary-container), .1)};
+  --header-background-color: #{rgba($bg-color, .8)};
+  --user-panel-background-color: #{$bg-color};
+  --mat-paginator-container-background-color: #{if(mat.get-theme-type($theme) == dark, '#3d3c3c','')};
+  --user-panel-hover-background-color: #{mat.get-theme-color($theme, surface-variant)};
+  --sidemenu-heading-hover-background-color: #e5e1e6;
+  --sidemenu-active-heading-text-color: #{mat.get-theme-color($theme, primary)};
+  --sidemenu-active-heading-background-color: #{mat.get-theme-color($theme, primary-container)};
+  --sidemenu-active-heading-hover-background-color: #{mat.get-theme-color($theme, primary-container)};
+  --sidemenu-expanded-background-color: #{$bg-color};
+  --topmenu-text-color: #{mat.get-theme-color($theme, on-background)};
+  --topmenu-background-color: #{rgba($bg-color, .8)};
+  --topmenu-item-active-background-color: #{mat.get-theme-color($theme, primary-container)};
+  --topmenu-dropdown-item-active-text-color: #{mat.get-theme-color($theme, primary)};
+  --toast-info-background-color: #{map.get(mat.$azure-palette,
+    if(mat.get-theme-type($theme) == dark, 30, 50))};
+  --toast-success-background-color: #{map.get(mat.$green-palette,
+    if(mat.get-theme-type($theme) == dark, 40, 60))};
+  --toast-warning-background-color: #{map.get(mat.$orange-palette,
+    if(mat.get-theme-type($theme) == dark, 40, 60))};
+  --toast-error-background-color: #{map.get(mat.$red-palette,
+    if(mat.get-theme-type($theme) == dark, 30, 50))};
+}

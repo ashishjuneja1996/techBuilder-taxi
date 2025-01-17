@@ -1,0 +1,15 @@
+{
+  "menu": [
+    {
+      "route": "dashboard",
+      "name": "dashboard",
+      "slug": "dashboard",
+      "type": "link",
+      "icon": "dashboard",
+      "icon2": "../images/heros/dashboard.png",
+      "icon3": "../images/heros-red/dashboard.png",
+      "icon4": "../images/heros-green/dashboard.png",
+       "icon5": "../images/heros-skyblue/dashboard.png"
+    }
+  ]
+}

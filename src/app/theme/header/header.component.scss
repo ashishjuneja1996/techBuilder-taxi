@@ -1,0 +1,22 @@
+.matero-header {
+  --mat-toolbar-container-background-color: transparent;
+
+  position: relative;
+  z-index: 200;
+  display: block;
+  background-color: var(--body-venus-white);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.15) !important;
+}
+
+.country-block .mat-mdc-form-field {
+  margin: 0px;
+}
+
+mat-toolbar {
+
+  .mat-mdc-icon-button .mdc-button__label,
+  .mat-mdc-icon-button .mat-icon {
+    color: var(--body-venus-blue) !important;
+  }
+}

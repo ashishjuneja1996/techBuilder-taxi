@@ -35,7 +35,6 @@ import { EncryptDecryptService } from '@core/authentication/encrypt-decrypt.serv
   imports: [
     CommonModule,
     AsyncPipe,
-    SlicePipe,
     NgTemplateOutlet,
     RouterLink,
     RouterLinkActive,
@@ -46,7 +45,7 @@ import { EncryptDecryptService } from '@core/authentication/encrypt-decrypt.serv
     NavAccordionDirective,
     NavAccordionItemDirective,
     NavAccordionToggleDirective,
-    BreadcrumbComponent,
+
     MatMenuModule,
     MatCardModule,
     MatButtonModule,
@@ -120,7 +119,8 @@ export class SidemenuComponent implements OnInit {
         if (matchesParent || filteredChildren.length > 0) {
           const newItem = {
             ...item,
-            ...(matchesParent ? permissionMenu.find(tab => tab.slug.toLowerCase() === item.slug.toLowerCase()) : {}),
+            ...(matchesParent ? permissionMenu
+              .find(tab => tab.slug.toLowerCase() === item.slug.toLowerCase()) : {}),
             children: filteredChildren.length > 0 ? filteredChildren : [],
           };
 

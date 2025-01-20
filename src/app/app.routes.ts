@@ -10,6 +10,7 @@ import { LoginComponent } from './routes/sessions/login/login.component';
 import { RegisterComponent } from './routes/sessions/register/register.component';
 import { TitleServiceService } from './core/authentication/title-service.service';
 import { RouteNameService } from '@shared/services/route-name.service';
+import { ClientOverviewComponent } from './routes/client-overview/client-overview.component';
 
 const routeNameService = new RouteNameService(); // Initialize the service
 const routeData = routeNameService.getRouteDataForDomain(); // Fetch dynamic route data
@@ -23,6 +24,7 @@ export const routes: Routes = [
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent, data: { title: routeData.dashboardTitle } },
+      { path: 'client-overview', component: ClientOverviewComponent, data: { title: routeData.dashboardTitle } },
       { path: '403', component: Error403Component },
       { path: '404', component: Error404Component },
       { path: '500', component: Error500Component },

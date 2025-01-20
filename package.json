@@ -46,6 +46,7 @@
     "@ngx-formly/material": "^6.3.0",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
+    "@types/google.maps": "^3.58.1",
     "angular-in-memory-web-api": "~0.18.0",
     "apexcharts": "^3.49.0",
     "crypto-js": "^4.2.0",

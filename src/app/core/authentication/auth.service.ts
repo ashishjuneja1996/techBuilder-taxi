@@ -1,5 +1,6 @@
+
 import { Injectable, inject } from '@angular/core';
-import { BehaviorSubject, catchError,Observable,iif, map, merge, of, share, switchMap, tap } from 'rxjs';
+import { BehaviorSubject, catchError,Observable,iif, map, merge, of, share, switchMap, tap, from } from 'rxjs';
 import { filterObject, isEmptyObject } from './helpers';
 import { User } from './interface';
 import { apiUrl } from './apiUrl';
@@ -69,7 +70,7 @@ export class AuthService {
         if (user2) {
           this.loadGoogleMaps(user2.google_key);
         } else {
-          console.error('Google Maps API key not found.');
+          // console.error('Google Maps API key not found.');
         }
         const currentUserData = this.EncryptDecryptService.encryptDataLocal(user2);
         localStorage.setItem('currentUser', currentUserData);
@@ -79,32 +80,32 @@ export class AuthService {
         return user;
       }),
       catchError((error) => {
-        console.error('Login failed', error);
+        // console.error('Login failed', error);
         return of(null);
       })
     );
   }
-  private loadGoogleMaps(apiKey: string): void {
+   loadGoogleMaps(apiKey: string): Promise<void> {
     const scriptId = 'googleMapsScript';
     const scriptUrl = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places,drawing`;
 
-    this.scriptLoaderService
+    return this.scriptLoaderService
       .loadScript(scriptId, scriptUrl)
       .then(() => {
-        // Initialize your Google Maps logic here
+        // this.loadMap.mapSetup();
       })
       .catch((error) => {
+
         // console.error('Error loading Google Maps script:', error);
       });
   }
   isLoggedInauth(): Observable<boolean> {
 
     const userJson = this.EncryptDecryptService.decryptDataLocalWithStorage('currentUser');
-    if (userJson) {
-      this.loadGoogleMaps(userJson.google_key);
-    } else {
-      console.error('Google Maps API key not found.');
-    }
+if(userJson)
+{
+  // this.loadGoogleMaps(userJson.google_key);
+}
     if (!userJson) {
       return of(false);
     }
@@ -117,6 +118,13 @@ export class AuthService {
         if (newUserData2 && Object.keys(newUserData2).length) {
           newUserData2.token = token;
           newUserData2.user_name = savedUser.user_name;
+
+          if (newUserData2) {
+            // this.loadGoogleMaps(newUserData2.google_key);
+            // console.error('Google Maps founded ghhhhhhhhhhhh.');
+          } else {
+            // console.error('Google Maps API key not found.');
+          }
           const currentUserData2 = this.EncryptDecryptService.encryptDataLocal(newUserData2);
           localStorage.setItem('currentUser', currentUserData2);
           return of(true);
@@ -130,6 +138,7 @@ export class AuthService {
     );
   }
 
+
   fetchToken(): Observable<any> {
     return this.loginService.fetchOperatorToken().pipe(
       tap((res) => {
@@ -142,7 +151,7 @@ export class AuthService {
         this.tokenService.setDomainToken(this.domainToken[0].token);
       }),
       catchError((error) => {
-        console.error('Fetching token failed', error);
+        // console.error('Fetching token failed', error);
         return of(null);
       })
     );

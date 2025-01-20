@@ -15,6 +15,7 @@ import {
 } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ApexOptions } from 'apexcharts';
+import { GoogleMapsModule } from '@angular/google-maps';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -42,6 +43,7 @@ import { ExcelService } from '@shared/services/excel.service';
 import { AmpmDatePipe } from '@shared/pipes/ampm-date.pipe';
 import ApexCharts from 'apexcharts';
 import { EncryptDecryptService } from '@core/authentication/encrypt-decrypt.service';
+import { ScriptLoaderService } from '@core/authentication/script-loader.service';
 export interface productElements {
   id: number;
   name: string;
@@ -78,7 +80,8 @@ export interface productElements {
     CommonModule,
     MatTabsModule,
     MatDatepickerModule,
-    TranslateModule
+    TranslateModule,
+    GoogleMapsModule
     ],
 })
 export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
@@ -175,9 +178,21 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor(
     private SERVER:ApiService,
     private cdr: ChangeDetectorRef,
-    private excelService: ExcelService
+    private excelService: ExcelService,
+    private googleMapsLoader: ScriptLoaderService
+
   ) {}
-  ngOnInit() {}
+  ngOnInit() {
+    this.googleMapsLoader.load()
+    .then(() => {
+      // this.mapSetup();
+      console.log('maps done');
+      
+    })
+    .catch((error) => {
+      console.error('Error loading Google Maps:', error);
+    });
+  }
   getCityNameById(city_id: number): string {
     const city = this.cityArray.find((item: { city_id: number; }) => item.city_id === city_id);
     return city ? city.utc_offset : 'Unknown';

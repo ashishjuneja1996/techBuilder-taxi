@@ -5,171 +5,107 @@
       "name": "dashboard",
       "slug": "dashboard",
       "type": "link",
-      "icon": "dashboard",
-      "icon2": "../images/heros/dashboard.png",
-      "icon3": "../images/heros-red/dashboard.png",
-      "icon4": "../images/heros-green/dashboard.png",
-       "icon5": "../images/heros-skyblue/dashboard.png"
-    },
-    {
-      "route": "user",
-      "name": "operator",
-      "slug": "users",
-      "type": "sub",
-      "icon2": "../images/heros/users.png",
-      "icon3": "../images/heros-red/user.png",
-      "icon4": "../images/heros-green/users.png",
-      "icon5": "../images/heros-skyblue/users.png",
-      "icon": "people",
-
-      "children": [
-        {
-          "route": "driver",
-          "name": "a2b",
-          "slug": "captions",
-          "type": "link",
-          "icon2": "../images/heros/Captains.png",
-          "icon3": "../images/heros-red/captain.png",
-          "icon4": "../images/heros-green/Captains.png",
-          "icon5": "../images/heros-skyblue/Captains.png",
-          "icon": "driver"
-        },
-        {
-          "route": "driver",
-          "name": "supperapp",
-          "slug": "captions",
-          "type": "link",
-          "icon2": "../images/heros/Captains.png",
-          "icon3": "../images/heros-red/captain.png",
-          "icon4": "../images/heros-green/Captains.png",
-          "icon5": "../images/heros-skyblue/Captains.png",
-          "icon": "driver"
-        },
-        {
-          "route": "driver",
-          "name": "vyba",
-          "slug": "captions",
-          "type": "link",
-          "icon2": "../images/heros/Captains.png",
-          "icon3": "../images/heros-red/captain.png",
-          "icon4": "../images/heros-green/Captains.png",
-          "icon5": "../images/heros-skyblue/Captains.png",
-          "icon": "driver"
-        },
-        {
-          "route": "driver",
-          "name": "ujeff",
-          "slug": "captions",
-          "type": "link",
-          "icon2": "../images/heros/Captains.png",
-          "icon3": "../images/heros-red/captain.png",
-          "icon4": "../images/heros-green/Captains.png",
-          "icon5": "../images/heros-skyblue/Captains.png",
-          "icon": "driver"
-        },
-        {
-          "route": "driver",
-          "name": "mride",
-          "slug": "captions",
-          "type": "link",
-          "icon2": "../images/heros/Captains.png",
-          "icon3": "../images/heros-red/captain.png",
-          "icon4": "../images/heros-green/Captains.png",
-          "icon5": "../images/heros-skyblue/Captains.png",
-          "icon": "driver"
-        },
-        {
-          "route": "driver",
-          "name": "sharpally",
-          "slug": "captions",
-          "type": "link",
-          "icon2": "../images/heros/Captains.png",
-          "icon3": "../images/heros-red/captain.png",
-          "icon4": "../images/heros-green/Captains.png",
-          "icon5": "../images/heros-skyblue/Captains.png",
-          "icon": "driver"
-        },
-        {
-          "route": "driver",
-          "name": "taxiKo",
-          "slug": "captions",
-          "type": "link",
-          "icon2": "../images/heros/Captains.png",
-          "icon3": "../images/heros-red/captain.png",
-          "icon4": "../images/heros-green/Captains.png",
-          "icon5": "../images/heros-skyblue/Captains.png",
-          "icon": "driver"
-        },
-        {
-          "route": "driver",
-          "name": "beTaxi",
-          "slug": "captions",
-          "type": "link",
-          "icon2": "../images/heros/Captains.png",
-          "icon3": "../images/heros-red/captain.png",
-          "icon4": "../images/heros-green/Captains.png",
-          "icon5": "../images/heros-skyblue/Captains.png",
-          "icon": "driver"
-        },
-        {
-          "route": "driver",
-          "name": "mcarrental",
-          "slug": "captions",
-          "type": "link",
-          "icon2": "../images/heros/Captains.png",
-          "icon3": "../images/heros-red/captain.png",
-          "icon4": "../images/heros-green/Captains.png",
-          "icon5": "../images/heros-skyblue/Captains.png",
-          "icon": "driver"
-        },
-        {
-          "route": "driver",
-          "name": "fare1",
-          "slug": "captions",
-          "type": "link",
-          "icon2": "../images/heros/Captains.png",
-          "icon3": "../images/heros-red/captain.png",
-          "icon4": "../images/heros-green/Captains.png",
-          "icon5": "../images/heros-skyblue/Captains.png",
-          "icon": "driver"
-        },
-        {
-          "route": "driver",
-          "name": "elite",
-          "slug": "captions",
-          "type": "link",
-          "icon2": "../images/heros/Captains.png",
-          "icon3": "../images/heros-red/captain.png",
-          "icon4": "../images/heros-green/Captains.png",
-          "icon5": "../images/heros-skyblue/Captains.png",
-          "icon": "driver"
-        },
-        {
-          "route": "customer",
-          "name": "door2fly",
-          "slug": "customers",
-          "type": "link",
-          "icon2": "../images/heros/customers.png",
-          "icon3": "../images/heros-red/customer.png",
-          "icon4": "../images/heros-green/customers.png",
-          "icon5": "../images/heros-skyblue/customers.png",
-          "icon": "flag"
-        }
-      ],
-      "permissions": {
-        "only": ["ADMIN", "MANAGER"]
-      }
+      "icon2": "../images/heros/dashboard.png"
     },
     {
       "route": "dashboard",
       "name": "subscription",
       "slug": "dashboard",
       "type": "link",
-      "icon": "dashboard",
-      "icon2": "../images/heros/dashboard.png",
-      "icon3": "../images/heros-red/dashboard.png",
-      "icon4": "../images/heros-green/dashboard.png",
-       "icon5": "../images/heros-skyblue/dashboard.png"
+      "icon2": "../images/heros/dashboard.png"
+    },
+    {
+      "route": "operator",
+      "name": "operator",
+      "slug": "users",
+      "type": "sub",
+      "icon2": "../images/heros/users.png",
+      "children": [
+        {
+          "route": "client-overview/a2b",
+          "name": "a2b",
+          "slug": "captions",
+          "type": "link",
+          "icon2": "../images/heros/users.png"
+        },
+        {
+          "route": "client-overview/supperapp",
+          "name": "supperapp",
+          "slug": "captions",
+          "type": "link",
+          "icon2": "../images/heros/logo_new.png"
+        },
+        {
+          "route": "client-overview/vyba",
+          "name": "vyba",
+          "slug": "captions",
+          "type": "link",
+          "icon2": "../images/heros/vyba_logo.png"
+        },
+        {
+          "route": "client-overview/ujeff",
+          "name": "ujeff",
+          "slug": "captions",
+          "type": "link",
+          "icon2": "../images/heros/ujjef.png"
+        },
+        {
+          "route": "client-overview/mride",
+          "name": "mride",
+          "slug": "captions",
+          "type": "link",
+          "icon2": "../images/heros/abcd.png"
+        },
+        {
+          "route": "client-overview/sharpally",
+          "name": "sharpally",
+          "slug": "captions",
+          "type": "link",
+          "icon2": "../images/heros/chuki-logo.png"
+        },
+        {
+          "route": "client-overview/taxiKo",
+          "name": "taxiKo",
+          "slug": "captions",
+          "type": "link",
+          "icon2": "../images/heros/ujjef.png"
+        },
+        {
+          "route": "client-overview/beTaxi",
+          "name": "beTaxi",
+          "slug": "captions",
+          "type": "link",
+          "icon2": "../images/heros/ujjef.png"
+        },
+        {
+          "route": "client-overview/mcarrental",
+          "name": "mcarrental",
+          "slug": "captions",
+          "type": "link",
+          "icon2": "../images/heros/ujjef.png"
+        },
+        {
+          "route": "client-overview/fare1",
+          "name": "fare1",
+          "slug": "captions",
+          "type": "link",
+          "icon2": "../images/heros/ujjef.png"
+        },
+        {
+          "route": "client-overview/elite",
+          "name": "elite",
+          "slug": "captions",
+          "type": "link",
+          "icon2": "../images/heros/ujjef.png"
+        },
+        {
+          "route": "client-overview",
+          "name": "door2fly",
+          "slug": "customers",
+          "type": "link",
+          "icon2": "../images/heros/ujjef.png"
+        }
+      ]
     }
   ]
 }

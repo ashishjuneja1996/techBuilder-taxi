@@ -24,7 +24,11 @@ export const routes: Routes = [
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent, data: { title: routeData.dashboardTitle } },
-      { path: 'client-overview', component: ClientOverviewComponent, data: { title: routeData.dashboardTitle } },
+      { 
+        path: 'operator/client-overview/:clientname', 
+        component: ClientOverviewComponent, 
+        data: { title: routeData.dashboardTitle } 
+      },
       { path: '403', component: Error403Component },
       { path: '404', component: Error404Component },
       { path: '500', component: Error500Component },

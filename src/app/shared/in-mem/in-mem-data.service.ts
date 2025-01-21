@@ -1,4 +1,4 @@
-import { inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpRequest } from '@angular/common/http';
 import { InMemoryDbService, RequestInfo, STATUS } from 'angular-in-memory-web-api';
 import { from, Observable } from 'rxjs';
@@ -6,7 +6,6 @@ import { ajax } from 'rxjs/ajax';
 import { find, map, switchMap } from 'rxjs/operators';
 import { environment } from '@env/environment';
 import { base64, currentTimestamp, filterObject, User } from '@core/authentication';
-import { EncryptDecryptService } from '@core/authentication/encrypt-decrypt.service';
 
 class JWT {
   generate(user: User) {
@@ -85,7 +84,6 @@ function is(reqInfo: RequestInfo, path: string) {
   providedIn: 'root',
 })
 export class InMemDataService implements InMemoryDbService {
-  protected readonly EncryptDecryptService= inject(EncryptDecryptService);
   private users: User[] = [
     {
       id: 1,
@@ -93,7 +91,7 @@ export class InMemDataService implements InMemoryDbService {
       password: 'ng-matero',
       name: 'Zongbin',
       email: 'nzb329@163.com',
-      avatar: 'images/user.png',
+      avatar: 'images/avatar.jpg',
     },
     {
       id: 2,
@@ -117,7 +115,7 @@ export class InMemDataService implements InMemoryDbService {
 
   get(reqInfo: RequestInfo) {
     const { headers, url } = reqInfo;
-    // console.log(reqInfo)
+
     if (is(reqInfo, 'sanctum/csrf-cookie')) {
       const response = { headers, url, status: STATUS.NO_CONTENT, body: {} };
 
@@ -127,42 +125,7 @@ export class InMemDataService implements InMemoryDbService {
     if (is(reqInfo, 'me/menu')) {
       return ajax('data/menu.json?_t=' + Date.now()).pipe(
         map((response: any) => {
-          // console.log('00000000000000000000000000000000000000'+JSON.stringify(response));
-          const localData: any = this.EncryptDecryptService.decryptDataLocalWithStorage('currentUser');
-          const userPermissions: any = localData.access_menu;
-          // eslint-disable-next-line no-debugger
-          // debugger;
-          // console.log('00000111111111111111'+userPermissions);
-          // console.log(userPermissions);
-          const menu = response.response.menu;
-
-          // Function to check if the menu item has permission
-          const hasPermission = (item: any): boolean => {
-            // Find a matching slug in the user's permissions
-            return userPermissions.some((permission: any) => permission.slug === item.slug);
-          };
-
-          // Recursively filter menus and submenus based on the slugs in permissions
-          const filterMenuByPermission = (menu: any[]): any[] => {
-            return menu
-              .filter(hasPermission)
-              .map((item: any) => {
-                if (item.children && item.children.length) {
-                  item.children = filterMenuByPermission(item.children);
-                }
-                return item;
-              });
-          };
-
-          // Filter the entire menu based on the user permissions slugs
-          const filteredMenu = filterMenuByPermission(menu);
-
-          return {
-            headers,
-            url,
-            status: STATUS.OK,
-            body: { menu: filteredMenu }
-          };
+          return { headers, url, status: STATUS.OK, body: { menu: response.response.menu } };
         }),
         switchMap(response => reqInfo.utils.createResponse$(() => response))
       );

@@ -1,46 +1,51 @@
 <div class="container-fluid py-4">
-    <div class="row">
-      <!-- Client Info Section -->
-      <div class="col-12 col-md-3">
-        <div class="card text-center shadow-sm mb-4">
-          <div class="card-body">
-            <img src="assets/client-logo.png" alt="Client Logo" class="img-fluid rounded-circle mb-3" style="max-width: 80px;">
-            <h5 class="card-title">Client Name</h5>
-          </div>
-        </div>
-        <div class="card shadow-sm mb-3">
-          <div class="card-body text-center">
-            <h6 class="text-muted">Total Revenue This Month</h6>
-            <h4 class="text-success fw-bold">$12,345</h4>
-          </div>
-        </div>
-        <div class="card shadow-sm">
-          <div class="card-body text-center">
-            <h6 class="text-muted">Overall/All Time Revenue</h6>
-            <h4 class="text-primary fw-bold">$123,456</h4>
-          </div>
+  <div class="row">
+    <!-- Client Info Section -->
+    <div class="col-12 col-md-3 d-flex flex-col justify-content-center">
+      <div class="card text-center shadow-sm mb-4">
+        <div class="card-body">
+          <img src="images/logo.png" alt="Client Logo" style="max-width: 120px;">
+          <p class="mt-2">{{clientName}}</p>
         </div>
       </div>
-  
-      <!-- Map Section -->
-      <div class="col-12 col-md-5">
-        <div class="card shadow-sm h-100">
-          <div class="card-body">
-            <h5 class="card-title text-center mb-3">Service Areas</h5>
-            <div id="map" style="height: 300px;" class="rounded"></div>
-          </div>
+      <div class="card shadow-sm mb-3">
+        <div class="card-body text-center">
+          <h6 class="text-muted">Total Revenue This Month</h6>
+          <h4 class="text-success fw-bold">$12,345</h4>
         </div>
       </div>
-  
-      <!-- Graph Section -->
-      <div class="col-12 col-md-4">
-        <div class="card shadow-sm h-100">
-          <div class="card-body">
-            <h5 class="card-title text-center mb-3">User Statistics</h5>
-            <div id="usersGraph" style="height: 300px;"></div>
-          </div>
+      <div class="card shadow-sm">
+        <div class="card-body text-center">
+          <h6 class="text-muted">Overall/All Time Revenue</h6>
+          <h4 class="text-primary fw-bold">$123,456</h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map Section -->
+    <div class="col-12 col-md-6">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title text-center mb-3">Service Areas</h5>
+          <div id="map" style="height: 300px;" class="rounded"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Graph Section -->
+    <div class="col-12 col-md-3">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title text-center mb-3">User Statistics</h5>
+          <apx-chart
+                     [series]="chartOptions.series"
+                     [chart]="chartOptions.chart"
+                     [xaxis]="chartOptions.xaxis"
+                     [dataLabels]="chartOptions.dataLabels"
+                     [title]="chartOptions.title">
+          </apx-chart>
         </div>
       </div>
     </div>
   </div>
-  
+</div>

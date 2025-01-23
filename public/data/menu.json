@@ -8,6 +8,13 @@
       "icon2": "../images/heros/dashboard.png"
     },
     {
+      "route": "dashboard",
+      "name": "subscription",
+      "slug": "dashboard",
+      "type": "link",
+      "icon2": "../images/heros/dashboard.png"
+    },
+    {
       "route": "operator",
       "name": "operator",
       "slug": "users",

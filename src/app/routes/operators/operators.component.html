@@ -1,1 +1,24 @@
-<p>operators works!</p>
+
+<div class="dash_boxes_main">
+    <div class="row">
+      @for (item of productsArray; track item.id) {
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="dash_box">
+          <div class="dash_box_img box_img_bg1">
+            <img [src]="item.imageUrl" alt="fiat-money" />
+          </div>
+          <div class="dash_box_text">
+            <h4 class="sub-head">{{item.name}}</h4>
+            <button class="venus_btn" (click)="goToLive(item.id)">Go To Live URL</button>
+          </div>
+          <div class="view-detail-block">
+            <button class="venus_btn" (click)="goToLive(item.id)">View Details</button>
+          </div>
+        </div>
+      </div>
+      } @empty {
+      <li>There are no items.</li>
+      }
+  
+    </div>
+  </div>

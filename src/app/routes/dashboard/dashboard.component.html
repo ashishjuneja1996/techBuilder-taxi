@@ -10,11 +10,12 @@
           <div class="col-sm-3 col-md-3 col-lg-3">
             <div class="dash_box">
               <div class="dash_box_img box_img_bg1">
-                <img src="images/fiat-money.png" alt="fiat-money"/>
+                <img src="images/fiat-money.png" alt="fiat-money" />
               </div>
               <div class="dash_box_text">
                 <h4 class="sub-head">{{'dashboard.total_active_operator' | translate}}</h4>
-                <p class="total_amount">{{currency}} {{dashboardStatus?.trips?.total_cash ? dashboardStatus?.trips?.total_cash :'0'}}</p>
+                <p class="total_amount">{{currency}} {{dashboardStatus?.trips?.total_cash ?
+                  dashboardStatus?.trips?.total_cash :'0'}}</p>
                 <!-- <span class="plus_value plus_green">+36.95% <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
                   <path d="M10.7461 2.47382L8.41173 2.75507C8.33438 2.76445 8.30157 2.85937 8.35665 2.91445L9.05157 3.60937L6.40313 6.25781L5.21016 5.06601C5.13633 4.99218 5.01798 4.99335 4.94532 5.06601L1.1754 8.8371C1.15795 8.85472 1.14816 8.87852 1.14816 8.90332C1.14816 8.92811 1.15795 8.95191 1.1754 8.96953L1.70274 9.49921C1.73907 9.53554 1.79883 9.53554 1.83516 9.49921L5.07774 6.25781L6.26954 7.4496C6.34337 7.52226 6.46172 7.52226 6.53438 7.4496L9.71485 4.27148L10.4098 4.9664C10.4222 4.97879 10.4379 4.98744 10.455 4.99136C10.4722 4.99528 10.49 4.99432 10.5066 4.98858C10.5232 4.98284 10.5379 4.97256 10.549 4.9589C10.56 4.94524 10.567 4.92876 10.5691 4.91132L10.8504 2.57695C10.8586 2.51718 10.807 2.46562 10.7461 2.47382Z" fill="#18AB1E"/>
                   </svg></span> -->
@@ -22,27 +23,30 @@
             </div>
           </div>
           <div class="col-sm-3 col-md-3 col-lg-3">
-              <div class="dash_box">
-                <div class="dash_box_img box_img_bg2">
-                 <img src="images/route.png" alt="route">
-                </div>
-                <div class="dash_box_text">
-                  <h4 class="sub-head">{{'dashboard.total_country_covered' | translate}}</h4>
-                  <p class="total_amount">{{dashboardStatus?.trips?.total_completed_trips ? dashboardStatus?.trips?.total_completed_trips :'0'}}</p>
-                  <!-- <span class="plus_value plus_green">+36.95% <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <div class="dash_box">
+              <div class="dash_box_img box_img_bg2">
+                <img src="images/route.png" alt="route">
+              </div>
+              <div class="dash_box_text">
+                <h4 class="sub-head">{{'dashboard.total_country_covered' | translate}}</h4>
+                <p class="total_amount">{{dashboardStatus?.trips?.total_completed_trips ?
+                  dashboardStatus?.trips?.total_completed_trips :'0'}}</p>
+                <!-- <span class="plus_value plus_green">+36.95% <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
                     <path d="M10.7461 2.47382L8.41173 2.75507C8.33438 2.76445 8.30157 2.85937 8.35665 2.91445L9.05157 3.60937L6.40313 6.25781L5.21016 5.06601C5.13633 4.99218 5.01798 4.99335 4.94532 5.06601L1.1754 8.8371C1.15795 8.85472 1.14816 8.87852 1.14816 8.90332C1.14816 8.92811 1.15795 8.95191 1.1754 8.96953L1.70274 9.49921C1.73907 9.53554 1.79883 9.53554 1.83516 9.49921L5.07774 6.25781L6.26954 7.4496C6.34337 7.52226 6.46172 7.52226 6.53438 7.4496L9.71485 4.27148L10.4098 4.9664C10.4222 4.97879 10.4379 4.98744 10.455 4.99136C10.4722 4.99528 10.49 4.99432 10.5066 4.98858C10.5232 4.98284 10.5379 4.97256 10.549 4.9589C10.56 4.94524 10.567 4.92876 10.5691 4.91132L10.8504 2.57695C10.8586 2.51718 10.807 2.46562 10.7461 2.47382Z" fill="#18AB1E"/>
                     </svg></span> -->
-                </div>
               </div>
+            </div>
           </div>
           <div class="col-sm-3 col-md-3 col-lg-3">
             <div class="dash_box">
               <div class="dash_box_img box_img_bg3">
-               <img src="images/average-icon.png" alt="route_time">
+                <img src="images/average-icon.png" alt="route_time">
               </div>
               <div class="dash_box_text">
                 <h4 class="sub-head">{{'dashboard.monthly_sales' | translate}}</h4>
-                <p class="total_amount"><img src="images/average-icon.png" alt="route_time"> {{dashboardStatus?.trips?.total_trips ? dashboardStatus?.trips?.total_trips :'0'}}</p>
+                <p class="total_amount"><img src="images/average-icon.png" alt="route_time">
+                  {{dashboardStatus?.trips?.total_trips ? dashboardStatus?.trips?.total_trips :'0'}}
+                </p>
                 <!-- <span class="plus_value plus_green">+36.95% <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
                   <path d="M10.7461 2.47382L8.41173 2.75507C8.33438 2.76445 8.30157 2.85937 8.35665 2.91445L9.05157 3.60937L6.40313 6.25781L5.21016 5.06601C5.13633 4.99218 5.01798 4.99335 4.94532 5.06601L1.1754 8.8371C1.15795 8.85472 1.14816 8.87852 1.14816 8.90332C1.14816 8.92811 1.15795 8.95191 1.1754 8.96953L1.70274 9.49921C1.73907 9.53554 1.79883 9.53554 1.83516 9.49921L5.07774 6.25781L6.26954 7.4496C6.34337 7.52226 6.46172 7.52226 6.53438 7.4496L9.71485 4.27148L10.4098 4.9664C10.4222 4.97879 10.4379 4.98744 10.455 4.99136C10.4722 4.99528 10.49 4.99432 10.5066 4.98858C10.5232 4.98284 10.5379 4.97256 10.549 4.9589C10.56 4.94524 10.567 4.92876 10.5691 4.91132L10.8504 2.57695C10.8586 2.51718 10.807 2.46562 10.7461 2.47382Z" fill="#18AB1E"/>
                   </svg></span> -->
@@ -52,11 +56,12 @@
           <div class="col-sm-3 col-md-3 col-lg-3">
             <div class="dash_box">
               <div class="dash_box_img box_img_bg4">
-               <img src="images/not-allowed.png" alt="not-allowed">
+                <img src="images/not-allowed.png" alt="not-allowed">
               </div>
               <div class="dash_box_text">
                 <h4 class="sub-head">{{'dashboard.active_customer' | translate}}</h4>
-                <p class="total_amount">{{dashboardStatus?.trips?.total_canceled_trips ? dashboardStatus?.trips?.total_canceled_trips :'0'}}</p>
+                <p class="total_amount">{{dashboardStatus?.trips?.total_canceled_trips ?
+                  dashboardStatus?.trips?.total_canceled_trips :'0'}}</p>
                 <!-- <span class="plus_value minus_red">+36.95% <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
                   <path d="M9.52624 10.7461L9.24499 8.41173C9.23561 8.33438 9.14069 8.30157 9.08561 8.35665L8.39069 9.05157L5.74225 6.40313L6.93405 5.21016C7.00788 5.13633 7.00671 5.01798 6.93405 4.94532L3.16296 1.1754C3.14534 1.15795 3.12154 1.14816 3.09675 1.14816C3.07195 1.14816 3.04815 1.15795 3.03053 1.1754L2.50085 1.70274C2.46452 1.73907 2.46452 1.79883 2.50085 1.83516L5.74225 5.07774L4.55046 6.26954C4.4778 6.34337 4.4778 6.46172 4.55046 6.53438L7.72858 9.71485L7.03366 10.4098C7.02127 10.4222 7.01262 10.4379 7.0087 10.455C7.00478 10.4722 7.00574 10.49 7.01148 10.5066C7.01722 10.5232 7.0275 10.5379 7.04116 10.549C7.05482 10.56 7.0713 10.567 7.08874 10.5691L9.42311 10.8504C9.48288 10.8586 9.53444 10.807 9.52624 10.7461Z" fill="#FF0001"/>
                   </svg></span> -->
@@ -64,22 +69,22 @@
             </div>
           </div>
         </div>
-        </div>
+      </div>
     </div>
     <div class="col-md-12">
       <div class="geo_fencing_map">
         <div #mapContainer id="map" style="height: 80vh; width: 100%;"></div>
-    </div>
+      </div>
     </div>
   </div>
-</div>
+<!-- </div>
 <div class="dash_boxes_main">
-<div class="row">
-  @for (item of productsArray; track item.id) {
+  <div class="row">
+    @for (item of productsArray; track item.id) {
     <div class="col-sm-12 col-md-12 col-lg-12">
       <div class="dash_box">
         <div class="dash_box_img box_img_bg1">
-          <img [src]="item.imageUrl" alt="fiat-money"/>
+          <img [src]="item.imageUrl" alt="fiat-money" />
         </div>
         <div class="dash_box_text">
           <h4 class="sub-head">{{item.name}}</h4>
@@ -94,7 +99,5 @@
     <li>There are no items.</li>
     }
 
-</div>
-</div>
-
-
+  </div>
+</div> -->

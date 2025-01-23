@@ -6,13 +6,14 @@ import {
   ApexTitleSubtitle,
 } from 'ng-apexcharts';
 import { CommonModule } from '@angular/common';
-import { Component, ViewChild, inject } from '@angular/core';
+import { Component, ViewChild, inject, ChangeDetectorRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { ActivatedRoute } from '@angular/router';
 import { NgApexchartsModule, ChartComponent } from 'ng-apexcharts';
+import { Subscription } from 'rxjs';
 
 /**
  * Interface for Chart Options 
@@ -42,6 +43,8 @@ interface ChartOptions {
 export class ClientOverviewComponent {
   @ViewChild('chart') chart!: ChartComponent;
   private route = inject(ActivatedRoute);
+  private cdr = inject(ChangeDetectorRef);
+  private paramSubscription: Subscription
 
   /**
    * Chart Configuration 
@@ -62,16 +65,35 @@ export class ClientOverviewComponent {
    */
   public serviceAreas: { lat: number; lng: number }[] = [
     { lat: 37.7749, lng: -122.4194 },
-    { lat: 48.8566, lng: 2.3522 }, 
+    { lat: 48.8566, lng: 2.3522 },
     { lat: 51.5074, lng: -0.1278 },
   ];
 
   public clientName!: string; // Client name extracted from the route
 
+  constructor() {
+    // Subscribe to route paramMap changes
+    this.paramSubscription = this.route.paramMap.subscribe((paramMap) => {
+      this.clientName = paramMap.get('clientname') || '';
+      console.log(`Client Name: ${this.clientName}`);
+      this.refreshData();
+    });
+  }
+
+  ngOnDestroy(): void {
+    // Cleanup subscription to avoid memory leaks
+    this.paramSubscription.unsubscribe();
+  }
+
   ngOnInit(): void {
-    this.clientName = this.route.snapshot.paramMap.get('clientname') || '';
-    console.log(`Client Name: ${this.clientName}`);
     this.initMap();
+  }
+
+  private refreshData(): void {
+    this.initMap();
+    console.log(`Client Name from ng on init: ${this.clientName}`);
+
+    // Add other refresh logic here if needed
   }
 
   /**

@@ -8,9 +8,9 @@ import { Error404Component } from './routes/sessions/404.component';
 import { Error500Component } from './routes/sessions/500.component';
 import { LoginComponent } from './routes/sessions/login/login.component';
 import { RegisterComponent } from './routes/sessions/register/register.component';
-import { TitleServiceService } from './core/authentication/title-service.service';
 import { RouteNameService } from '@shared/services/route-name.service';
-import { ClientOverviewComponent } from './routes/client-overview/client-overview.component';
+import { ClientOverviewComponent } from './routes/operators/client-overview/client-overview.component';
+import { OperatorsComponent } from './routes/operators/operators.component';
 
 const routeNameService = new RouteNameService(); // Initialize the service
 const routeData = routeNameService.getRouteDataForDomain(); // Fetch dynamic route data
@@ -24,6 +24,7 @@ export const routes: Routes = [
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent, data: { title: routeData.dashboardTitle } },
+      { path: 'operators', component: OperatorsComponent, data: { title: routeData.dashboardTitle } },
       { 
         path: 'operator/client-overview/:clientname', 
         component: ClientOverviewComponent, 

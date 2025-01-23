@@ -71,7 +71,7 @@ export class LoginService {
     const domainMatch = /:\/\/([^/]+)/.exec(window.location.href);
     // const domainMatch = /:\/\/([^\/]+)/.exec('https://admin-panel.mride.co.uk/auth/login ');
     const subDomain = domainMatch?.[1] || 'chuki-admin.venustaxi.in'; // Ensure subDomain is always a string
-    return domainMatch?.[1] === 'localhost:4200' ? 'chuki-admin.venustaxi.in' : subDomain; // Return subDomain instead of domainMatch?.[1]
+    return domainMatch?.[1] === 'localhost:50304' ? 'chuki-admin.venustaxi.in' : subDomain; // Return subDomain instead of domainMatch?.[1]
   }
   // fetchOperatorToken(): Observable<any> {
   //   return this.http.post<any>(`${this.BASE_URL2}${this.END_POINT.forFetchToken}`, { domain: this.getSubDomain()}).pipe(

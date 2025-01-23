@@ -1,0 +1,140 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- Client Info Section -->
+    <div class="col-12 col-md-3 d-flex flex-col justify-content-center">
+      <div class="card text-center shadow-sm mb-4">
+        <div class="card-body">
+          <img src="images/logo.png" alt="Client Logo" style="max-width: 120px;">
+          <p class="mt-2">{{clientName}}</p>
+        </div>
+      </div>
+      <div class="card shadow-sm mb-3">
+        <div class="card-body text-center">
+          <h6 class="text-muted">Total Revenue This Month</h6>
+          <h4 class="text-success fw-bold">$12,345</h4>
+        </div>
+      </div>
+      <div class="card shadow-sm">
+        <div class="card-body text-center">
+          <h6 class="text-muted">Overall/All Time Revenue</h6>
+          <h4 class="text-primary fw-bold">$123,456</h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map Section -->
+    <div class="col-12 col-md-6">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title text-center mb-3">Service Areas</h5>
+          <div id="map" style="height: 200px;" class="rounded"></div>
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>Area Name</th>
+                <th>Service Type</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>UK</td>
+                <td>Delivery</td>
+                <td><span class="badge bg-success">Active</span></td>
+              </tr>
+              <tr>
+                <td>INDIA</td>
+                <td>Delivery</td>
+                <td><span class="badge bg-danger">Inactive</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Graph Section -->
+    <div class="col-12 col-md-3">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title text-center mb-3">User Statistics</h5>
+          <apx-chart
+                     [series]="chartOptions.series"
+                     [chart]="chartOptions.chart"
+                     [xaxis]="chartOptions.xaxis"
+                     [dataLabels]="chartOptions.dataLabels"
+                     [title]="chartOptions.title">
+          </apx-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+      <!-- Client Payment Info Section -->
+      <div class="col-12 col-md-6">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title text-center mb-3">
+              <i class="fas fa-wallet text-success me-2"></i> Client Payment Info
+            </h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex justify-content-between">
+                <strong>Payment Status:</strong>
+                <span><span class="badge bg-success">Paid</span></span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                <strong>Last Payment Date:</strong>
+                <span>{{ 'lastPaymentDate' }}</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                <strong>Due Payment:</strong>
+                <span><span class="text-danger fw-bold">$0</span></span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                <strong>Total Payment:</strong>
+                <span class="fw-bold">${{ 'totalPayment' }}</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                <strong>Next Installment Date:</strong>
+                <span>{{ 'nextInstallmentDate' }}</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                <strong>Next Installment Amount:</strong>
+                <span class="fw-bold">${{ 'nextInstallmentAmount' }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    <!-- Client Details Section -->
+    <div class="col-12 col-md-6">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title text-center mb-3">
+            <i class="fas fa-user-circle text-primary me-2"></i> Client's Contact Info
+          </h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item d-flex justify-content-between">
+              <strong>Name:</strong>
+              <span>{{ 'clientName' }}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <strong>Email:</strong>
+              <span>{{ 'clientEmail' }}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <strong>Mobile:</strong>
+              <span>{{ 'clientMobile' }}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <strong>Address:</strong>
+              <span>{{ 'clientAddress' }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
